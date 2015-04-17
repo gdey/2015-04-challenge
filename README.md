@@ -23,7 +23,7 @@ url it will return an png counting the number of times that url has been hit. Us
 the given png encoding the numbers 0-9, and the characters ",." to create the digits to display.
 
 ![Numbers Mask](https://raw.githubusercontent.com/SDGophers/2015-04-challenge/master/images/numbers.png)
-
+This is a 300x400 px image, with each glyph being 100x100 px.
 The url should look like the following:
 
 GET http://localhost:8080/counter/${{identifier}}
