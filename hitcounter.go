@@ -55,21 +55,22 @@ func humanizeString(i int) string {
 	stri := []rune(fmt.Sprintf("%d", i))
 
 	l := len(stri)
-	if l > 3 {
-		n := int(l / 3)
-		st := make([]rune, n+l)
-		j := 0
-		for i := l - 1; i >= 0; i-- {
-			if j == 3 {
-				j = 0
-				st[i+n] = ','
-				n--
-			}
-			j++
-			st[i+n] = stri[i]
-		}
-		stri = st
+	if l <= 3 {
+		return string(stri)
 	}
+	n := int(l / 3)
+	st := make([]rune, n+l)
+	j := 0
+	for i := l - 1; i >= 0; i-- {
+		if j == 3 {
+			st[i+n] = ','
+			j = 0
+			n--
+		}
+		j++
+		st[i+n] = stri[i]
+	}
+	stri = st
 	return string(stri)
 }
 
